@@ -12,3 +12,7 @@ kubectl kustomize kustom/argo-cd/overlays --enable-helm --output $tmpdir/argo-cd
 kubectl apply -f $tmpdir/argo-cd.yaml
 
 rm -rf $tmpdir
+
+# Install the apps (this includes the argo-cd app)
+# That way it manages it self 
+kubectl apply -k apps
