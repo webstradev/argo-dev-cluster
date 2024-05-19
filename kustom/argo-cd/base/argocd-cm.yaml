@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  kustomize.buildOptions: --enable-helm
+  helm.repositories: |
+    - name: stable
+      url: https://charts.helm.sh/stable
+  configManagementPlugins: |
+    - name: kustomized-helm
+      generate:
+        command: [sh, -c]
+        args: ["kustomize build --enable-helm"]
