@@ -16,6 +16,7 @@ SSH_PRIVATE_KEY=$(cat $SSH_KEY_LOCATION)
 # Create the Kubernetes secret with the correct label and structure
 kubectl create secret generic argocd-repo-secret\
   --namespace argocd \
+  --from-literal=name=main-repo \
   --from-literal=type=git \
   --from-literal=url=git@github.com:$GITHUB_USERNAME/$REPO_NAME.git \
   --from-literal=sshPrivateKey="$SSH_PRIVATE_KEY" \
