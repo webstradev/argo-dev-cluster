@@ -11,7 +11,7 @@ helmCharts:
   valuesMerge: merge
   version: 5.51.6
 
-patchesStrategicMerge:
-  - "./argocd-cm.yaml"
 
 namespace: argocd
+patches:
+- path: ./argocd-cm.yaml
