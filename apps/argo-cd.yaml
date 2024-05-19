@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: kustom/argo-cd/overlays
-    repoURL: https://github.com/webstradev/argo-dev-cluster.git 
+    repoURL: git@github.com:webstradev/argo-dev-cluster.git 
     targetRevision: main
   syncPolicy:
     automated:
