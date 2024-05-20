@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argo-ingress
+  name: argocd-ingress
   namespace: argocd
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
