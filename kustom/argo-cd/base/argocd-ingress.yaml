@@ -1,19 +1,14 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
   name: argocd-ingress
   namespace: argocd
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  rules:
-  - host: argo.cluster.webstra.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`argo.cluster.webstra.dev`)
+      kind: Rule
+      services:
+        - name: argocd-server
+          port: 80
