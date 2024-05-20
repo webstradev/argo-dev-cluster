@@ -12,6 +12,8 @@ helmCharts:
   version: 5.51.6
 
 
-namespace: argocd
 patches:
 - path: ./argocd-cm.yaml
+- path: ./argocd-ingress.yaml
+
+namespace: argocd
