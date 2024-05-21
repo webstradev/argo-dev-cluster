@@ -4,16 +4,16 @@ metadata:
   name: argocd-ingress
   namespace: argocd
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: argo.cluster.webstra.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              number: 80
+    - host: argo.cluster.webstra.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
