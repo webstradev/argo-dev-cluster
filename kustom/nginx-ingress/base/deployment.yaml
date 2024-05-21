@@ -16,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/name: ingress-nginx
     spec:
+      serviceAccountName: nginx-ingress-serviceaccount
       containers:
       - name: controller
         image: k8s.gcr.io/ingress-nginx/controller:v1.1.1
