@@ -11,7 +11,7 @@ spec:
   source:
     path: kustom/nginx-ingress/overlays
     repoURL: git@github.com:webstradev/argo-dev-cluster.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
