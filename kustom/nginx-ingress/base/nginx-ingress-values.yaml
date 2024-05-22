@@ -8,3 +8,5 @@ controller:
       # service.beta.kubernetes.io/do-loadbalancer-certificate-id: "<your-certificate-id>"
       # service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
     type: LoadBalancer
+  config:
+    use-proxy-protocol: "true"
