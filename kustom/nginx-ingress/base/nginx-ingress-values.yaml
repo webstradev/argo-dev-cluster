@@ -9,12 +9,12 @@ controller:
     type: NodePort
     externalTrafficPolicy: Cluster
     ports:
-      - name: http
+      http:
         port: 80
         protocol: TCP
         targetPort: http
         nodePort: 30080
-      - name: https
+      https:
         port: 443
         protocol: TCP
         targetPort: https
