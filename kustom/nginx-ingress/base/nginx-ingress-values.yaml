@@ -9,16 +9,14 @@ controller:
     type: NodePort
     externalTrafficPolicy: Cluster
     ports:
-      http:
-        port: 80
-        protocol: TCP
-        nodePort: 30080
-        targetPort: 80
-      https:
-        port: 443
-        protocol: TCP
-        targetPort: 443
-        nodePort: 30443
+      http: 80
+      https: 443
+    targetPorts:
+      http: http
+      https: https
+    nodePorts:
+      http: 30080
+      https: 30443
     selector:
       app.kubernetes.io/name: ingress-nginx
       app.kubernetes.io/instance: ingress-nginx
