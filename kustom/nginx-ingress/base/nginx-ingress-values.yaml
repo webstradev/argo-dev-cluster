@@ -6,5 +6,22 @@ controller:
       # Uncomment and set your certificate ID if using HTTPS
       # service.beta.kubernetes.io/do-loadbalancer-certificate-id: "<your-certificate-id>"
       # service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
+    type: NodePort
+    externalTrafficPolicy: Cluster
+    ports:
+      http:
+        port: 80
+        protocol: TCP
+        targetPort: http
+        nodePort: 30080
+      https:
+        port: 443
+        protocol: TCP
+        targetPort: https
+        nodePort: 30443
+    selector:
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/instance: ingress-nginx
+      app.kubernetes.io/component: controller 
   config:
     use-proxy-protocol: "true"
