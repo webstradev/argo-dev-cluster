@@ -1,4 +1,11 @@
-resources:
-  - "rbac.yaml"
-  - "deployment.yaml"
-  - "service.yaml"
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+- includeCRDs: true
+  name: ingress-nginx 
+  namespace: ingress-nginx
+  releaseName: ingress-nginx
+  repo: https://kubernetes.github.io/ingress-nginx
+
+namespace: ingress-nginx
