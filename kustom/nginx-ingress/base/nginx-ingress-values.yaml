@@ -6,7 +6,8 @@ controller:
       # Uncomment and set your certificate ID if using HTTPS
       # service.beta.kubernetes.io/do-loadbalancer-certificate-id: "<your-certificate-id>"
       # service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
-    type: NodePort
+    spec:
+      type: NodePort
     externalTrafficPolicy: Cluster
     ports:
       http:
