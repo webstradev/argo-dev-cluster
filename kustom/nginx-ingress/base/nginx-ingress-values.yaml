@@ -2,8 +2,7 @@ controller:
   service:
     annotations:
       service.beta.kubernetes.io/do-loadbalancer-name: "k3s_loadbalancer"
-      service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
-      service.beta.kubernetes.io/do-loadbalancer-algorithm: "round_robin"
+      service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
       # Uncomment and set your certificate ID if using HTTPS
       # service.beta.kubernetes.io/do-loadbalancer-certificate-id: "<your-certificate-id>"
       # service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
