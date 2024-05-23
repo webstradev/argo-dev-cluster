@@ -18,4 +18,3 @@ spec:
               name: argocd-server
               port:
                 number: 80
-  ingresClassname: nginx
