@@ -12,8 +12,8 @@ controller:
       http: 80
       https: 443
     targetPorts:
-      http: http
-      https: https
+      http: 80
+      https: 443
     nodePorts:
       http: 30080
       https: 30443
