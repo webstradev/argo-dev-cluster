@@ -18,3 +18,5 @@ spec:
                 name: argocd-server
                 port:
                   number: 80
+                  targetPort: 8080
+                  protocol: TCP
