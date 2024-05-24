@@ -1,0 +1,11 @@
+webhook:
+  enabled: true
+  caBundle: ""
+  securityContext:
+    enabled: true
+    fsGroup: 1001
+    runAsUser: 1001
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
