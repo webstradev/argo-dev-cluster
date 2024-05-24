@@ -1,6 +1,7 @@
 resources:
   - namespace.yaml
   - cert-manager-crds.yaml
+  - cluster-issuer.yaml
 
 helmCharts:
 - includeCRDs: true
