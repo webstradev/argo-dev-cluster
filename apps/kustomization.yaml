@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   - apps.yaml
   - applications/argo-cd.yaml
-  - applications/namespaces.yaml
   - applications/nginx-ingress.yaml
   - applications/webserver.yaml
 
