@@ -6,6 +6,6 @@ resources:
   - applications/argo-cd.yaml
   - applications/nginx-ingress.yaml
   - applications/webserver.yaml
-  - applications/cert-manager.yaml
+  # - applications/cert-manager.yaml
 
 namespace: argocd
