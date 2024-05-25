@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
-  url: https://argocd.cluster.webstra.dev
   kustomize.buildOptions: --enable-helm
   helm.repositories: |
     - name: stable
@@ -25,3 +24,4 @@ data:
         config:
           clientID:  $argocd-sso-key:dex.github.clientID
           clientSecret: $argocd-sso-key:dex.github.clientSecret
+          url: https://argocd.cluster.webstra.dev
