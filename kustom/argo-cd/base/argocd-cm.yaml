@@ -25,4 +25,4 @@ data:
         config:
           clientID:  $argocd-sso-key:dex.github.clientID
           clientSecret: $argocd-sso-key:dex.github.clientSecret
-          redirectURI: https://argocd.cluster.webstra.dev/auth/github/callback
+          redirectURI: https://argocd.cluster.webstra.dev/dex/callback
