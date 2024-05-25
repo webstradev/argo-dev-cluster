@@ -8,5 +8,5 @@ metadata:
 data:
   policy.default: role:readonly
   policy.csv: |
-    g, e.s.westra.95@gmail.com, role:admin
+    g, erik@webstra.dev, role:admin
   scopes: '[groups, email]'
