@@ -12,3 +12,6 @@ kubectl kustomize kustom/argo-cd/overlays --enable-helm | kubectl apply -f -
 # Install the apps (this includes the argo-cd app)
 # That way it manages it self 
 kubectl apply -k apps
+
+# Remove the charts from your local machine
+rm -rf kustom/argo-cd/base/charts
