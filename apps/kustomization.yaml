@@ -3,9 +3,9 @@ kind: Kustomization
 
 resources:
   - apps.yaml
-  - applications/argo-cd.yaml
-  - applications/nginx-ingress.yaml
-  - applications/webserver.yaml
-  - applications/cert-manager.yaml
+  - argo-cd/application.yaml
+  - nginx-ingress/application.yaml
+  - webserver/application.yaml
+  - cert-manager/application.yaml
 
 namespace: argocd

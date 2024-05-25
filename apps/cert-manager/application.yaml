@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-ingress
+  name: cert-manager
   namespace: argocd
 spec:
   destination:
-    namespace: ingress-nginx
+    namespace: cert-manager
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kustom/nginx-ingress/overlays
+    path: apps/cert-manager/overlays
     repoURL: git@github.com:webstradev/argo-dev-cluster.git
     targetRevision: main
   syncPolicy:

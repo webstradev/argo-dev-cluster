@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: webserver 
   namespace: argocd
 spec:
   destination:
-    namespace: cert-manager
+    namespace: webserver 
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kustom/cert-manager/overlays
+    path: apps/webserver/overlays
     repoURL: git@github.com:webstradev/argo-dev-cluster.git
     targetRevision: main
   syncPolicy:
