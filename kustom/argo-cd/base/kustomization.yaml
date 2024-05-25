@@ -17,5 +17,6 @@ helmCharts:
 
 patches:
 - path: ./argocd-cm.yaml
+- path: ./argocd-rbac-cm.yaml
 
 namespace: argocd

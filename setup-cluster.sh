@@ -4,6 +4,8 @@ kubectl create ns argocd
 # Create the secret for the repository (needed for argo-cd)
 ./create-repo-secret.sh
 
+./create-sso-secret.sh
+
 # Install argo=cd using the manifest
 kubectl kustomize kustom/argo-cd/overlays --enable-helm | kubectl apply -f -
 
