@@ -8,6 +8,10 @@ kubectl kustomize apps/namespaces | kubectl apply -f -
 # Install external-secrets using manifest 
 kubectl kustomize apps/external-secrets --enable-helm | kubectl apply -f -
 
+# Wait for the external-secrets-webhook deployment to be ready
+echo "Waiting for external-secrets-webhook deployment to be ready..."
+kubectl wait --for=condition=available --timeout=120s deployment/external-secrets-webhook -n external-secrets
+
 # Install the cluster secret store
 # (this connects to gitlabs and initialises the store)
 kubectl apply -k apps/cluster-secret-store
