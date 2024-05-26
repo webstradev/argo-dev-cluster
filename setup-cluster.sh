@@ -5,9 +5,10 @@ kubectl create ns external-secrets
 # Create secret for gitlab access token
 ./create-gitlab-secret.sh
 
-# Install external-secrets using the manifest
-# (also creates ClusterSecretStore connected to gitlab)
-kubectl apply -k apps/external-secrets --enable-helm | kubectl apply -f -
+# Install external-secrets using manifest 
+kubectl kustomize apps/external-secrets --enable-helm | kubectl apply -f -
+
+kubectl apply -k apps/cluster-secret-store
 
 # Install argocd using the manifest
 kubectl kustomize apps/argo-cd --enable-helm | kubectl apply -f -
