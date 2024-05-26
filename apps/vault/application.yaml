@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault 
+  namespace: argocd
+spec:
+  destination:
+    namespace: vault 
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - path: apps/vault/overlays
+      repoURL: git@github.com:webstradev/argo-dev-cluster.git
+      targetRevision: main
+    - repoURL: https://helm.releases.hashicorp.com
+      release: hashicorp
+      chart: vault
+      targetRevision: 0.27.0
+      helm:
+        valueFiles:
+        - values.yaml 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
