@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/argo-cd/overlays
+    path: apps/argo-cd
     repoURL: git@github.com:webstradev/argo-dev-cluster.git 
     targetRevision: main
   syncPolicy:
