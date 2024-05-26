@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/cert-manager/overlays
+    path: apps/cert-manager
     repoURL: git@github.com:webstradev/argo-dev-cluster.git
     targetRevision: main
   syncPolicy:

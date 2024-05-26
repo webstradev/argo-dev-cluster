@@ -1,6 +1,6 @@
 resources:
   - namespace.yaml
-  - cert-manager-crds.yaml
+  - crds/cert-manager-crds.yaml
   - cluster-issuer.yaml
 
 helmCharts:
