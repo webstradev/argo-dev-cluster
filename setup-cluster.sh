@@ -39,7 +39,8 @@ while true; do
   if [ "$all_healthy" = true ]; then
     break
   fi
-  sleep 10
+  sleep 30
+  echo "===== Retrying... ====="
 done
 
 echo "All Argo CD applications are healthy and synced."
@@ -48,3 +49,4 @@ echo "All Argo CD applications are healthy and synced."
 rm -rf apps/argo-cd/charts 
 rm -rf apps/external-secrets/charts
 
+echo '<a href="argo.cluster.webstra.dev">Click here to go to Argo CD Dashboard</a>'
