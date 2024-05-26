@@ -24,7 +24,7 @@ data:
         id: github
         name: GitHub
         config:
-          clientID:  $argocd-sso-key:dex.github.clientID
-          clientSecret: $argocd-sso-key:dex.github.clientSecret
+          clientID:  $argocd-sso-secret:dex.github.clientID
+          clientSecret: $argocd-sso-secret:dex.github.clientSecret
           orgs:
-            - name: $argocd-sso-key:dex.github.org
+            - name: $argocd-sso-secret:dex.github.org

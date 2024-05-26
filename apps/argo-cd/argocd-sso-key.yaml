@@ -1,0 +1,25 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: argocd-sso-secret 
+spec:
+  refreshInterval: 1h
+
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: cluster-secret-store
+
+  target:
+    name: argocd-sso-secret 
+    creationPolicy: Owner
+
+  data:
+    - secretKey: dex.github.org 
+      remoteRef: 
+        key: argocd_sso_org
+    - secretKey: dex.github.clientID 
+      remoteRef: 
+        key: argocd_sso_client_id
+    - secretKey: dex.github.clientSecret 
+      remoteRef: 
+        key: argocd_sso_client_secret
