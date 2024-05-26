@@ -7,5 +7,6 @@ resources:
   - nginx-ingress/application.yaml
   - webserver/application.yaml
   - cert-manager/application.yaml
+  - vault/application.yaml
 
 namespace: argocd
