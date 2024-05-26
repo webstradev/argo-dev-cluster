@@ -1,3 +1,2 @@
 resources:
   - cluster-secret-store.yaml
-  - test-secret.yaml
