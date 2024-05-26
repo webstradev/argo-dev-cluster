@@ -23,10 +23,6 @@ kubectl kustomize apps/argo-cd --enable-helm | kubectl apply -f -
 # (argocd is one of these apps so now argocd manages itself)
 kubectl apply -k apps
 
-# Remove the charts from your local machine (just some clean up)
-rm -rf apps/argo-cd/charts 
-rm -rf apps/external-secrets/charts
-
 # Wait for all applications in the argocd namespace to be healthy and synced
 echo "Waiting for Argo CD applications to be healthy and synced..."
 
@@ -47,3 +43,8 @@ while true; do
 done
 
 echo "All Argo CD applications are healthy and synced."
+
+# Remove the charts from your local machine (just some clean up)
+rm -rf apps/argo-cd/charts 
+rm -rf apps/external-secrets/charts
+
