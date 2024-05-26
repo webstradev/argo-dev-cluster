@@ -22,3 +22,24 @@ kubectl apply -k apps
 # Remove the charts from your local machine (just some clean up)
 rm -rf apps/argo-cd/charts 
 rm -rf apps/external-secrets/charts
+
+# Wait for all applications in the argocd namespace to be healthy and synced
+echo "Waiting for Argo CD applications to be healthy and synced..."
+
+while true; do
+  all_healthy=true
+  for app in $(kubectl get applications.argoproj.io -n argocd -o jsonpath='{.items[*].metadata.name}'); do
+    health_status=$(kubectl get applications.argoproj.io $app -n argocd -o jsonpath='{.status.health.status}')
+    sync_status=$(kubectl get applications.argoproj.io $app -n argocd -o jsonpath='{.status.sync.status}')
+    if [ "$health_status" != "Healthy" ] || [ "$sync_status" != "Synced" ]; then
+      all_healthy=false
+      echo "Waiting for application $app to be healthy and synced..."
+    fi
+  done
+  if [ "$all_healthy" = true ]; then
+    break
+  fi
+  sleep 10
+done
+
+echo "All Argo CD applications are healthy and synced."
