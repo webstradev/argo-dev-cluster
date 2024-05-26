@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   admin.enabled: "false"
-  url: https://argo.cluster.webstra.dev
+  url: https://argocd.cluster.webstra.dev
   kustomize.buildOptions: --enable-helm
   helm.repositories: |
     - name: stable

@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - argo.cluster.webstra.dev
+    - argocd.cluster.webstra.dev
     secretName: argocd-tls 
   rules:
-  - host: argo.cluster.webstra.dev
+  - host: argocd.cluster.webstra.dev
     http:
       paths:
         - path: /
