@@ -6,7 +6,7 @@ kubectl create ns argocd
 
 ./create-sso-secret.sh
 
-# Install argo=cd using the manifest
+# Install argocd using the manifest
 kubectl kustomize apps/argo-cd --enable-helm | kubectl apply -f -
 
 # Install the apps (this includes the argo-cd app)
