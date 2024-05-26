@@ -8,10 +8,13 @@ spec:
     namespace: external-secrets
     server: https://kubernetes.default.svc
   project: default
-  source:
-      repoURL: https://charts.external-secrets.io
+  sources:
+    - repoURL: https://charts.external-secrets.io
       chart: external-secrets
-      targetRevision: 0.9.7
+      targetRevision: 0.9.18
+    - path: apps/external-secrets
+      repoURL: git@github.com:webstradev/argo-dev-cluster.git
+      targetRevision: main
   syncPolicy:
     automated:
       prune: true
