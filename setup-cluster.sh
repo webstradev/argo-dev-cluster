@@ -1,7 +1,13 @@
 # bin/bash
 kubectl create ns argocd
+kubectl create ns external-secrets
 
-# Create the secret for the repository (needed for argo-cd)
+# Create secret for gitlab access token
+./create-gitlab-secret.sh
+
+# Install external-secrets
+kubectl apply -k apps/external-secrets
+
 ./create-repo-secret.sh
 
 ./create-sso-secret.sh
