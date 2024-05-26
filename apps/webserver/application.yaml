@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/webserver/overlays
+    path: apps/webserver
     repoURL: git@github.com:webstradev/argo-dev-cluster.git
     targetRevision: main
   syncPolicy:
