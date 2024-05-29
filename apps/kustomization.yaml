@@ -3,12 +3,14 @@ kind: Kustomization
 
 resources:
   - apps.yaml
-  - namespaces/application.yaml
-  - external-secrets/application.yaml
-  - cluster-secret-store/application.yaml
+
   - argo-cd/application.yaml
+  - cert-manager/application.yaml
+  - cluster-secret-store/application.yaml
+  - external-secrets/application.yaml
+  - kube-prometheus-stack/application.yaml
+  - namespaces/application.yaml
   - nginx-ingress/application.yaml
   - webserver/application.yaml
-  - cert-manager/application.yaml
 
 namespace: argocd
