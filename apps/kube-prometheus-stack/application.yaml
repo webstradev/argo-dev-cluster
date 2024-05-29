@@ -14,9 +14,9 @@ spec:
     - repoURL: https://prometheus-community.github.io/helm-charts
       chart: kube-prometheus-stack
       targetRevision: 59.0.0
-      helm:
-        valueFiles:
-          - values.yaml
+    - path: apps/kube-prometheus-stack
+      repoURL: git@github.com:webstradev/argo-dev-cluster.git 
+      targetRevision: main
   syncPolicy:
     automated:
       prune: true
