@@ -12,7 +12,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - grafana.cluster.webstra.dev
+    - monitoring.cluster.webstra.dev
     secretName: monitoring-tls 
   rules:
   - host: grafana.cluster.webstra.dev
