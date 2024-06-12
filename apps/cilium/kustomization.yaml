@@ -18,5 +18,6 @@ helmCharts:
     ipam: # Match podCIDR for k3s
       operator:
         clusterPoolIPv4PodCIDRList: "10.42.0.0/16"
+        replicas: 1 # Single node cluster
   version: 1.15.6
 
