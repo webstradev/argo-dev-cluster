@@ -8,7 +8,6 @@ helmCharts:
   releaseName: cilium
   repo: https://helm.cilium.io/
   valuesInline:
-    kubeProxyReplacement: true
     endpointRoutes:
       enabled: true
     hubble:
@@ -16,5 +15,8 @@ helmCharts:
         enabled: true
       ui:
         enabled: true
+    ipam: # Match podCIDR for k3s
+      operator:
+        clusterPoolIPv4PodCIDRList: "10.42.0.0/16"
   version: 1.15.6
 
