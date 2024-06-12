@@ -5,6 +5,9 @@ kubectl kustomize apps/namespaces | kubectl apply -f -
 # Create secret for gitlab access token
 ./create-gitlab-secret.sh
 
+# Install Cilium CNI which is required for external-secrets installation.
+kubectl kustomize apps/cilium --enable-helm | kubectl apply -f -
+
 # Install external-secrets using manifest 
 kubectl kustomize apps/external-secrets --enable-helm | kubectl apply -f -
 
