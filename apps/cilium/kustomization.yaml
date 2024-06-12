@@ -8,6 +8,7 @@ helmCharts:
   releaseName: cilium
   repo: https://helm.cilium.io/
   valuesInline:
+    kubeProxyReplacement: true
     endpointRoutes:
       enabled: true
     hubble:
