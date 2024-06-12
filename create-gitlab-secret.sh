@@ -2,7 +2,7 @@
 # Prompt for Gitlab token name and access_token 
 read -p "Enter the Gitlab token name (default: k3s-dev-cluster): " GITLAB_TOKEN_NAME 
 GITLAB_TOKEN_NAME=${GITLAB_TOKEN_NAME:-k3s-dev-cluster}
-read -p "Enter your Gitlab access token: " GITLAB_ACCESS_TOKEN
+read -s -p "Enter your Gitlab access token: " GITLAB_ACCESS_TOKEN
 
 # Create kubernetes secret
 kubectl create secret generic gitlab-token\
