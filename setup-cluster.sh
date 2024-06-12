@@ -29,3 +29,4 @@ kubectl apply -k apps
 # Remove the charts from your local machine (just some clean up)
 rm -rf apps/argo-cd/charts 
 rm -rf apps/external-secrets/charts
+rm -rf apps/cilium/charts
