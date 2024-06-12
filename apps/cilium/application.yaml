@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium 
+  namespace: argo-cd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cilium
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/cilium
+    repoURL: git@github.com:webstradev/argo-dev-cluster.git 
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
