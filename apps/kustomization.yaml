@@ -5,6 +5,7 @@ resources:
   - apps.yaml
 
   - argo-cd/application.yaml
+  - cilium/application.yaml
   - cert-manager/application.yaml
   - cluster-secret-store/application.yaml
   - external-secrets/application.yaml
