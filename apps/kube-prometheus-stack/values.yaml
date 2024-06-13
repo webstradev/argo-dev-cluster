@@ -1,4 +1,20 @@
 grafana:
+  env:
+    - name: GF_AUTH_GITHUB_CLIENT_ID
+      valueFrom:
+        secretKeyRef:
+          name: grafana-sso-secret
+          key: github.clientID
+    - name: GF_AUTH_GITHUB_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: grafana-sso-secret
+          key: github.clientSecret
+    - name: GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS
+      valueFrom:
+        secretKeyRef:
+          name: grafana-sso-secret
+          key: github.org
   ingress:
     enabled: true
     ingressClassName: nginx
@@ -21,10 +37,10 @@ grafana:
     auth:
       github:
         enabled: true
-        client_id: $grafana-sso-secret:github.clientID
-        client_secret: $grafana-sso-secret:github.clientSecret 
+        client_id: $GF_AUTH_GITHUB_CLIENT_ID
+        client_secret: $GF_AUTH_GITHUB_CLIENT_SECRET
         scopes: "user:email,read:org"
         auth_url: "https://github.com/login/oauth/authorize"
         token_url: "https://github.com/login/oauth/access_token"
         api_url: "https://api.github.com/user"
-        allowed_organizations: $grafana-sso-secret:github.org
+        allowed_organizations: $GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS
