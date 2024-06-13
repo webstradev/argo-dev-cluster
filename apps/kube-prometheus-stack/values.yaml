@@ -12,7 +12,6 @@ grafana:
       secretName: monitoring-tls 
     hosts:
       - monitoring.cluster.webstra.dev 
-    pathType: Prefix
     path: /grafana/
   grafana.ini:
   server:
