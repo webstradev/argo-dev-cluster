@@ -18,12 +18,13 @@ grafana:
       domain: monitoring.cluster.webstra.dev
       root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
       serve_from_sub_path: true
-    auth.github:
-      enabled = true
-      client_id = $grafana-sso-secret:github.clientID
-      client_secret = $grafana-sso-secret:github.clientSecret 
-      scopes = "user:email,read:org"
-      auth_url = "https://github.com.login/oauth/authorize"
-      token_url = "https://github.com.login/oauth/access_token"
-      api_url = "https://api.github.com/user"
-      allowed_organizations = [$grafana-sso-secret:github.org]
+    auth:
+      github:
+        enabled = true
+        client_id = $grafana-sso-secret:github.clientID
+        client_secret = $grafana-sso-secret:github.clientSecret 
+        scopes = "user:email,read:org"
+        auth_url = "https://github.com.login/oauth/authorize"
+        token_url = "https://github.com.login/oauth/access_token"
+        api_url = "https://api.github.com/user"
+        allowed_organizations = [$grafana-sso-secret:github.org]
