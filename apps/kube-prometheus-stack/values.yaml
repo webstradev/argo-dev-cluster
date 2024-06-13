@@ -9,7 +9,7 @@ grafana:
     tls:
     - hosts:
       - grafana.cluster.webstra.dev
-      secretName: monitoring-tls 
+      secretName: grafana-tls 
     hosts:
       - grafana.cluster.webstra.dev 
     pathType: Prefix
