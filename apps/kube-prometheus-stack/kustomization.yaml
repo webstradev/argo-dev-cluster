@@ -1,6 +1,3 @@
-resources:
-  - "grafana-ingress.yaml"
-
 helmCharts:
 - includeCRDs: true
   name: kube-prometheus-stack
