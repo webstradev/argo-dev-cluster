@@ -16,7 +16,11 @@ spec:
       targetRevision: 59.0.0
       helm:
         valueFiles:
-          - values.yaml
+          - $root/apps/kube-prometheus-stack/values.yaml
+    - path: apps/kube-prometheus-stack
+      repoURL: git@github.com:webstradev/argo-dev-cluster.git 
+      targetRevision: main
+      ref: root
   syncPolicy:
     automated:
       prune: true
