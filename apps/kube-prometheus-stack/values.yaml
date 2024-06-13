@@ -13,9 +13,9 @@ grafana:
     hosts:
       - monitoring.cluster.webstra.dev 
     pathType: Prefix
-    path: /grafana
+    path: /grafana/
   grafana.ini:
   server:
-    root_url: https://monitoring.cluster.webstra.dev/
-    subpath: /grafana
+    domain: monitoring.cluster.webstra.dev
+    root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
     serve_from_sub_path: true
