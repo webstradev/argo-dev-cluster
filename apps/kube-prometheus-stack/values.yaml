@@ -1,19 +1,16 @@
 grafana:
-  env:
-  - name: GF_AUTH_GITHUB_CLIENT_ID
-    valueFrom:
+  envValueFrom:
+    GF_AUTH_GITHUB_CLIENT_ID:
       secretKeyRef:
-        name: grafana-sso-secret
+        name: grafana-sso-key
         key: github.clientID
-  - name: GF_AUTH_GITHUB_CLIENT_SECRET
-    valueFrom:
+    GF_AUTH_GITHUB_CLIENT_SECRET:
       secretKeyRef:
-        name: grafana-sso-secret
+        name: grafana-sso-key
         key: github.clientSecret
-  - name: GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS
-    valueFrom:
+    GF_AUTH_GITHUB_CLIENT_ORG:
       secretKeyRef:
-        name: grafana-sso-secret
+        name: grafana-sso-key
         key: github.org
   ingress:
     enabled: true
