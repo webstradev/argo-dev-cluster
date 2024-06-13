@@ -15,9 +15,9 @@ spec:
       chart: kube-prometheus-stack
       targetRevision: 59.0.0
       valuesFile: ./values.yaml
-    - path: apps/kube-prometheus-stack
-      repoURL: git@github.com:webstradev/argo-dev-cluster.git 
-      targetRevision: main
+    # - path: apps/kube-prometheus-stack
+    #   repoURL: git@github.com:webstradev/argo-dev-cluster.git 
+    #   targetRevision: main
   syncPolicy:
     automated:
       prune: true
