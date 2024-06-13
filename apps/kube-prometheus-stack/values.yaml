@@ -8,12 +8,14 @@ grafana:
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls:
     - hosts:
-      - grafana.cluster.webstra.dev
-      secretName: grafana-tls 
+      - monitoring.cluster.webstra.dev
+      secretName: monitoring-tls 
     hosts:
-      - grafana.cluster.webstra.dev 
+      - monitoring.cluster.webstra.dev 
     pathType: Prefix
-    path: /
+    path: /grafana
   grafana.ini:
   server:
-    root_url: https://grafana.cluster.webstra.dev/
+    root_url: https://monitoring.cluster.webstra.dev/
+    subpath: /grafana
+    serve_from_sub_path: true
