@@ -1,2 +1,2 @@
-# resources:
-#   - "monitoring-ingress.yaml"
+resources:
+  - "grafana-ingress.yaml"
