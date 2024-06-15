@@ -2,15 +2,15 @@ grafana:
   envValueFrom:
     GF_AUTH_GITHUB_CLIENT_ID:
       secretKeyRef:
-        name: grafana-sso-key
+        name: grafana-sso-secret
         key: github.clientID
     GF_AUTH_GITHUB_CLIENT_SECRET:
       secretKeyRef:
-        name: grafana-sso-key
+        name: grafana-sso-secret
         key: github.clientSecret
     GF_AUTH_GITHUB_CLIENT_ORG:
       secretKeyRef:
-        name: grafana-sso-key
+        name: grafana-sso-secret
         key: github.org
   ingress:
     enabled: true
