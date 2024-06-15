@@ -31,8 +31,7 @@ grafana:
       domain: monitoring.cluster.webstra.dev
       root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
       serve_from_sub_path: true
-  auth:
-    github:
+    auth.github:
       enabled: true
       client_id: ${GF_AUTH_GITHUB_CLIENT_ID}
       client_secret: ${GF_AUTH_GITHUB_CLIENT_SECRET}
