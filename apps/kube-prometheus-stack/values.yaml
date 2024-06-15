@@ -1,5 +1,4 @@
 grafana:
-  disableLoginForm: true
   envValueFrom:
     GF_AUTH_GITHUB_CLIENT_ID:
       secretKeyRef:
@@ -32,6 +31,8 @@ grafana:
       domain: monitoring.cluster.webstra.dev
       root_url: https://monitoring.cluster.webstra.dev/grafana 
       serve_from_sub_path: true
+    auth.basic:
+      enabled: false
     auth.github:
       enabled: true
       client_id: ${GF_AUTH_GITHUB_CLIENT_ID}
