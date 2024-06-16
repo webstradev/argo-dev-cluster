@@ -6,14 +6,18 @@ metadata:
   labels:
     app.kubernetes.io/part-of: argocd
 data:
-  policy.default: role:readonly
+  policy.default: |
+    g, role:default, role:readonly, deny 
+    p, role:default, *, *, *, deny
   policy.csv: |
-    p, role:cluster-admin, applications, *, */*, allow
-    p, role:cluster-admin, clusters, get, *, allow
-    p, role:cluster-admin, repositories, get, *, allow
-    p, role:cluster-admin, repositories, create, *, allow
-    p, role:cluster-admin, repositories, update, *, allow
-    p, role:cluster-admin, repositories, delete, *, allow
-    p, role:cluster-admin, projects, *, *, allow
-    g, webstrasuite:cluster-admins, role:cluster-admin
+    p, role:developer, applications, get, */*, allow
+    p, role:developer, applications, sync, */*, allow
+    p, role:developer, applications, refresh, */*, allow
+    p, role:developer, projects, get, */*, allow
+    p, role:developer, repositories, get, */*, allow
+    p, role:developer, clusters, get, */*, allow
+    p, role:developer, accounts, get, */*, allow
+    p, role:developer, logs, get, */*, allow
+    g, webstrasuite:cluster-admins, role:admin
+    g, webstrasuite:developer, role:developer
   scopes: '[groups, email]'
