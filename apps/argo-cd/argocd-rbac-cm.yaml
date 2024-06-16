@@ -15,5 +15,5 @@ data:
     p, role:developer, applications, refresh, *, allow
 
     g, webstrasuite:cluster-admins, role:admin
-    g, webstrasuite:developer, role:developer
+    g, webstrasuite:developers, role:developer
   scopes: '[groups, email]'
