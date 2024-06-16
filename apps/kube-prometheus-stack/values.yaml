@@ -45,5 +45,7 @@ grafana:
       api_url: "https://api.github.com/user"
       allowed_organizations: ${GF_AUTH_GITHUB_CLIENT_ORG}
       role_attribute_path: >-
-        contains(groups[*], '@webstrasuite/developers') && 'Admin' || 'Viewer'
+        contains(groups[*], '@webstrasuite/cluster-admins') && 'Admin' || 
+        contains(groups[*], '@webstrasuite/developers') && 'Editor' || 
+        'Viewer'
 
