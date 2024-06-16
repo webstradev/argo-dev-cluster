@@ -8,5 +8,12 @@ metadata:
 data:
   policy.default: role:readonly
   policy.csv: |
-    g, erik@webstra.dev, role:admin
+    p, role:cluster-admin, applications, *, */*, allow
+    p, role:cluster-admin, clusters, get, *, allow
+    p, role:cluster-admin, repositories, get, *, allow
+    p, role:cluster-admin, repositories, create, *, allow
+    p, role:cluster-admin, repositories, update, *, allow
+    p, role:cluster-admin, repositories, delete, *, allow
+    p, role:cluster-admin, projects, *, *, allow
+    g, webstrasuite/cluster-admins, role:cluster-admin
   scopes: '[groups, email]'

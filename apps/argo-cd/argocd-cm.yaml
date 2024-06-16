@@ -30,6 +30,7 @@ data:
       - type: github
         id: github
         name: GitHub
+        loadAllGroups: true
         config:
           clientID:  $argocd-sso-secret:dex.github.clientID
           clientSecret: $argocd-sso-secret:dex.github.clientSecret
