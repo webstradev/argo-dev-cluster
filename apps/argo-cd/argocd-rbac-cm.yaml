@@ -15,5 +15,5 @@ data:
     p, role:cluster-admin, repositories, update, *, allow
     p, role:cluster-admin, repositories, delete, *, allow
     p, role:cluster-admin, projects, *, *, allow
-    g, webstrasuite:cluster-admins, role:cluster-admin
+    g, webstrasuite:cluster-admins, role:admin
   scopes: '[groups, email]'
