@@ -44,3 +44,5 @@ grafana:
       token_url: "https://github.com/login/oauth/access_token"
       api_url: "https://api.github.com/user"
       allowed_organizations: ${GF_AUTH_GITHUB_CLIENT_ORG}
+      role_attribute_path: "contains(organization.name, '${GF_AUTH_GITHUB_CLIENT_ORG}') && 'Editor' || 'Viewer'"
+
