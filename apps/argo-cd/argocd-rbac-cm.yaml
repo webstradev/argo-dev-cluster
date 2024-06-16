@@ -18,6 +18,7 @@ data:
     p, role:developer, clusters, get, */*, allow
     p, role:developer, accounts, get, */*, allow
     p, role:developer, logs, get, */*, allow
+
     g, webstrasuite:cluster-admins, role:admin
     g, webstrasuite:developer, role:developer
   scopes: '[groups, email]'
