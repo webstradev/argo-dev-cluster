@@ -10,14 +10,9 @@ data:
     g, role:default, role:readonly, deny 
     p, role:default, *, *, *, deny
   policy.csv: |
-    p, role:developer, applications, get, *, allow
+    p, role:developer, *, get, *, allow
     p, role:developer, applications, sync, *, allow
     p, role:developer, applications, refresh, *, allow
-    p, role:developer, projects, get, *, allow
-    p, role:developer, repositories, get, *, allow
-    p, role:developer, clusters, get, *, allow
-    p, role:developer, accounts, get, *, allow
-    p, role:developer, logs, get, *, allow
 
     g, webstrasuite:cluster-admins, role:admin
     g, webstrasuite:developer, role:developer
