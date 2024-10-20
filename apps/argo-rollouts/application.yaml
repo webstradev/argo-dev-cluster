@@ -10,8 +10,23 @@ spec:
     targetRevision: HEAD
     path: charts/argo-rollouts
     helm:
-      valueFiles:
-        - $values/argo-rollouts/values.yaml
+      values: |
+        controller:
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+        dashboard:
+          enabled: true
+          service:
+            type: ClusterIP
+        metrics:
+          enabled: true
+          serviceMonitor:
+            enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argo-rollouts
