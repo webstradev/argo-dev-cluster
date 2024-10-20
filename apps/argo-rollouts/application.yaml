@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/argoproj/argo-helm.git
-    targetRevision: v1.7.2
+    targetRevision: 5.51.6
     path: charts/argo-rollouts
     helm:
       values: |
