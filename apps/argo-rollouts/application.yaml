@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://argoproj.github.io/argo-helm
     targetRevision: 5.51.6
-    path: charts/argo-rollouts
+    path: argo-rollouts
     helm:
       values: |
         controller:
