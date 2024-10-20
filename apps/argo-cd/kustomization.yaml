@@ -14,7 +14,7 @@ helmCharts:
   repo: https://argoproj.github.io/argo-helm
   valuesFile: values.yaml
   valuesMerge: merge
-  version: 5.51.6
+  version: 7.6.12
 
 
 patches:
