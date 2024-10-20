@@ -13,5 +13,11 @@ resources:
   - namespaces/application.yaml
   - nginx-ingress/application.yaml
   - webserver/application.yaml
+  - argo-rollouts/application.yaml
+
+configMapGenerator:
+  - name: argo-rollouts-values
+    files:
+      - argo-rollouts/values.yaml
 
 namespace: argocd
