@@ -25,6 +25,24 @@ data:
       generate:
         command: [sh, -c]
         args: ["kustomize build --enable-helm"]
+    - name: helm-kustomize
+      init:
+        command: [sh, -c]
+        args: ["helm dependency build"]
+      generate:
+        command: [sh, -c]
+        args: |
+          - |
+            # Create temp directory for kustomize
+            TEMP_DIR=$(mktemp -d)
+            trap "rm -rf $TEMP_DIR" EXIT
+            
+            # Generate helm template directly into kustomization.yaml
+            helm template . --values values.yaml > "$TEMP_DIR/kustomization.yaml"
+            
+            # Run kustomize build
+            cd "$TEMP_DIR"
+            kubectl kustomize . --enable-helm
   dex.config: |
     connectors:
       - type: github
