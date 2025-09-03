@@ -6,11 +6,3 @@ server:
   config:
     helm.enabled: true
     helm.oci.enabled: true
-
-repoServer:
-  extraArgs:
-    - --enable-oci
-
-controller:
-  extraArgs:
-    - --enable-oci
